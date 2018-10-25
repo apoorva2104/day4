@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+struct number
+{
+    int array[50];
+    int n;
+    int sum;
+};
+
+struct number read()
+{
+    struct number s;
+    int i;
+    printf("enter the array size");
+    scanf("%d",&s.n);
+    printf("read the array elements");
+    for(i=0;i<s.n;i++)
+    scanf("%d",&s.array[i]);
+    return s;
+}
+
+struct number add(struct number s)
+{
+    s.sum=0;
+    int i;
+    for(i=0;i<s.n;i++)
+    s.sum=(s.sum+s.array[i]);
+    return s;
+}
+void out(struct number s)
+{
+    printf("sum is %d",s.sum);
+}
+
+void main()
+{   struct number s;
+    s=read();
+    s=add(s);
+    out(s);
+}
